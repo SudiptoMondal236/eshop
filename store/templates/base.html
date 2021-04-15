@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <title>Martgenix</title>
+
+    <!-- favicon -->
+    <link rel="apple-touch-icon" sizes="57x57" href="../fav/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="../fav/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="../fav/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="../fav/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="../fav/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="../fav/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="../fav/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="../fav/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../fav/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="../fav/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../fav/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="../fav/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../fav/favicon-16x16.png">
+    <link rel="manifest" href="../fav/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="../fav/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+
+    <style>
+        nav {
+            background-color: white;
+        }
+        
+        .one-edge-shadow {
+            box-shadow: 0 8px 2px -5px rgb(246, 245, 245);
+        }
+        
+        .display-8 {
+            font-weight: 200;
+            font-size: 30px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- navbar -->
+
+    <nav class="one-edge-shadow 
+  sticky-top navbar 
+  navbar-expand-lg
+   navbar-light bg-white">
+        <a class="navbar-brand" href="/">E-Shop</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="/store">Store <span class="sr-only">(current)</span></a>
+                </li>
+
+            </ul>
+
+
+            <ul class=" navbar-nav my-2 my-lg-0">
+                <li class="nav-item ">
+                    <a class="nav-link" href="/cart">Cart 
+            <span class="badge badge-info">{{request.session.cart.keys|length}}</span>
+            <span class="sr-only">(current)</span></a>
+                </li>
+                {% if request.session.customer %}
+
+                <li class="nav-item ">
+                    <a class="nav-link" href="/orders">Orders<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item ">
+                    <a class="nav-link" href="/logout">Logout<span class="sr-only">(current)</span></a>
+                </li>
+                {% else %}
+
+                <li class="nav-item ">
+                    <a class="nav-link" href="/signup">Signup<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item ">
+                    <a class="nav-link" href="/login">Login<span class="sr-only">(current)</span></a>
+                </li>
+                {% endif %}
+
+
+
+            </ul>
+
+
+        </div>
+    </nav>
+
+
+    {% block content %}{% endblock %}
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+
+</html>
